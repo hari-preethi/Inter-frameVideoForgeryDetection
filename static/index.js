@@ -17,11 +17,10 @@ function uploadVideo()
                 var response = JSON.parse(xhr.responseText);
                 document.getElementById('video-source').setAttribute('src', response.video_path);
                 document.getElementById('video-preview').load();
-                document.getElementById('prediction-result').innerText = response.prediction;
                 if (response.prediction >= 0.5) {
-                    document.getElementById('prediction-result-class').innerText = 'Video is Forged';
+                    document.getElementById('prediction-result-class').innerText = 'Video is Forged - ' + response.prediction;
                 } else {
-                    document.getElementById('prediction-result-class').innerText = 'Video is Original';
+                    document.getElementById('prediction-result-class').innerText = 'Video is Original - ' + response.prediction;
                 }
                 document.getElementById('video-result').style.display = 'block';
 

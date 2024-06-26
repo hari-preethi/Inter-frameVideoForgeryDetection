@@ -20,13 +20,21 @@ footer{
 }
 
 #transbox{
-    width:70%;
-    height: 500px;
+    width:60%;
+    height: 510px;
     background-color: #ffffff;
-    opacity: 0.9;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding:10px;
+}
+
+.pred{
+    border: 3px solid #43438f;
+    color: black;
+    width: 200px;
+    height: 50px;
+    text-align: center;
 }
 
 nav {
