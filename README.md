@@ -6,7 +6,7 @@ In today's digital era, video content plays a crucial role in shaping public per
     - Frame extraction from input video
     - Grayscale conversion
     - Resize
-    ([preprocess.py](preprocess.py))
+([preprocess.py](preprocess.py))
 2. Multi-scale Difference Feature Extraction
     - Calculate Pixel Difference Features using Forward Differential Convolutional Neural Network
     - Calculate Deep Difference Features using Post Differential Convolutional Neural Network
