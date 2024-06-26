@@ -1,0 +1,77 @@
+h1{
+    border: 2px solid black;
+    background-color: lightblue;
+    color: black;
+    width: 800px;
+    text-align: center;
+}
+h3{
+    border: 2px solid black;
+    background-color: lightblue;
+    color: black;
+    width: 200px;
+    text-align: center;
+}
+button[type=button]:hover,input[type=file]:hover{
+    background-color:black;
+    color: white;
+}
+button[type=button],input[type=file]{
+    background-color:lightblue;
+    color: black;
+}
+body {
+    background: linear-gradient(89.7deg, rgb(0, 0, 0) -10.7%, rgb(53, 92, 125) 88.8%);
+    background-attachment: fixed;
+    background-size: cover;
+}
+#prediction-result,#prediction-result-class{
+    color: rgb(167, 187, 241);
+}
+
+#selectvideo{
+    color: white;
+}
+
+#video-container {
+    background-color: rgb(255, 255, 255); /* semi-transparent black */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-color: white;
+    width : 320px;
+    height: 240px;
+}
+
+.pred{
+    border: 2px solid rgb(255, 255, 255);
+    color: black;
+    width: 100px;
+    height: 80px;
+    text-align: center;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    z-index: 1000;
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
