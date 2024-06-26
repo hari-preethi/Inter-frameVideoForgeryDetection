@@ -18,3 +18,6 @@ In today's digital era, video content plays a crucial role in shaping public per
 
 ## Example
 ![Example](sample_output.png)
+
+## Reference
+Feng, C., Wu, D., Wu, T. et al. An MSDCNN-LSTM framework for video frame deletion forensics. Multimed Tools Appl (2024). https://doi.org/10.1007/s11042-024-18324-7
