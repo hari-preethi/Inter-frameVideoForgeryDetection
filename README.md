@@ -15,3 +15,6 @@ In today's digital era, video content plays a crucial role in shaping public per
 3. Classification
 ([lstmFC.py](lstmFC.py),[vfd_main.py](vfd_main.py))
     - Classify the video as 'Forged' or 'Original' using the LSTM model
+
+## Example
+![Example](sample_output.png)
