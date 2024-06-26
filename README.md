@@ -3,13 +3,15 @@ In today's digital era, video content plays a crucial role in shaping public per
 
 ## Modules
 1. Data Preprocessing
+([preprocess.py](preprocess.py))
     - Frame extraction from input video
     - Grayscale conversion
     - Resize
-([preprocess.py](preprocess.py))
 2. Multi-scale Difference Feature Extraction
+([difference_msdcnn.py](difference_msdcnn.py),[msdcnn.py](msdcnn.py))
     - Calculate Pixel Difference Features using Forward Differential Convolutional Neural Network
     - Calculate Deep Difference Features using Post Differential Convolutional Neural Network
     - Concatenate both features -> Multi-scale Difference Feature
 3. Classification
+([lstmFC.py](lstmFC.py),[vfd_main.py](vfd_main.py))
     - Classify the video as 'Forged' or 'Original' using the LSTM model
