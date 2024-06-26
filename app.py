@@ -7,8 +7,6 @@ from tensorflow.keras.models import load_model # type: ignore
 from preprocess import video_to_grayscale
 from msdcnn import feature_fusion
 from lstmFC import reshape_to_3d
-from shap_exp import apply_shap_to_lstm
-from feature_plot import plot_features
 
 app = Flask(__name__)
 app.template_folder = 'templates'
@@ -50,18 +48,9 @@ def upload_file():
             msd_feature = preprocess_video(video_path)
             # Predict forgery
             prediction = predict_forgery(msd_feature)
-            # Paths for saving plots
-            shap_plot_path = os.path.join('static','shap_plot.png')
-            feature_plot_path = os.path.join('static','feature_plot.png')
-            
-            # Generate and save SHAP plot
-            
-            #apply_shap_to_lstm(lstm_model, msd_feature, shap_plot_path)
-            # Flatten and save feature plot
-            video_features_flattened = msd_feature.reshape(msd_feature.shape[0], -1)
-            plot_features(video_features_flattened, feature_plot_path)
+           
             # Return the prediction result as JSON
-            return jsonify({'prediction': prediction, 'video_path': url_for('serve_video', filename=filename), 'shap_plot': url_for('static', filename='shap.png'), 'feature_plot': url_for('static', filename='feature_plot.png')})
+            return jsonify({'prediction': prediction, 'video_path': url_for('serve_video', filename=filename)})
     return render_template('index.html', error="No file uploaded")
 
 

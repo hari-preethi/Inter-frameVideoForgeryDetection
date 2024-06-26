@@ -1,4 +1,5 @@
-function uploadVideo() {
+function uploadVideo()
+{
     var formData = new FormData();
     var fileInput = document.getElementById('video-upload');
     var file = fileInput.files[0];
@@ -18,17 +19,12 @@ function uploadVideo() {
                 document.getElementById('video-preview').load();
                 document.getElementById('prediction-result').innerText = response.prediction;
                 if (response.prediction >= 0.5) {
-                    document.getElementById('prediction-result-class').innerText = 'Forged';
+                    document.getElementById('prediction-result-class').innerText = 'Video is Forged';
                 } else {
-                    document.getElementById('prediction-result-class').innerText = 'Original';
+                    document.getElementById('prediction-result-class').innerText = 'Video is Original';
                 }
                 document.getElementById('video-result').style.display = 'block';
 
-                setTimeout(function() {
-                    document.getElementById('shap-plot').setAttribute('src', response.shap_plot);
-                    document.getElementById('feature-plot').setAttribute('src', response.feature_plot);
-                    document.getElementById('shap-feature-plots').style.display = 'block';
-                }, 500); // Adjust the delay if necessary
             } else {
                 console.error('Error:', xhr.status);
             }

@@ -7,55 +7,62 @@
     <title>Video Forgery Detection</title>
 </head>
 <body>
+    <header>
+        <h1 id="title">Inter-frame Video Forgery Detection</h1>
+        <nav>
+            <ul>
+              <li><a href="#aboutProject">About Project</a></li>
+            </ul>
+          </nav>
+    </header>
+
+
     <center>
-    <h1>Inter-frame Video Forgery Detection</h1>
-    <h3>Upload video</h3>
+        <div id="transbox">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <h3>Upload video for forgery detection</h3>
+                <input type="file" id="video-upload" name="video" accept="video/*" style="border: 1px solid #ccc;display: inline-block;padding: 6px 12px;cursor: pointer;">
+                <button type="button" onclick="uploadVideo()" style="border: 1px solid #ccc;display: inline-block;padding: 6px 12px;cursor: pointer;">Upload</button>
+            </form>
         
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label for="video-upload" id="selectvideo">Select a video file:</label>
-        <input type="file" id="video-upload" name="video" accept="video/*">
-        <button type="button" onclick="uploadVideo()">Upload</button>
-    </form>
-
-    <div id="loader" style="display: none;">
-        <div class="spinner"></div>
-    </div>
-
-    <div id="video-result" style="display: none;">
-        <h3>Uploaded Video Preview</h3>
-        <div id="video-container">
-            <video id="video-preview" width="320" height="240" controls>
-                <source id="video-source" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <h3>Prediction Result</h3>
-        <div class="pred">
-            <p id="prediction-result"></p>
-            <p id="prediction-result-class"></p>
-        </div>
-    </div>
-        <div id="shap-feature-plots" style="display: none;">
-            <table>
-                <tr>
-                    <td><h3>Features plot</h3></td>
-                </tr>
-                <tr>
-                    <td><img id="feature-plot" src="" alt="Feature Plot" style="width: 100%;"></td>
-                </tr>
-                <tr>
-                    <td><h3>SHAP plot</h3></td>
-                </tr>
-                <tr>
-                    <td><img id="shap-plot" src="" alt="SHAP Plot" style="width: 100%;"></td>
-                </tr>
-            </table>
-        </div>
+            <div id="loader" style="display: none;">
+                <div class="spinner"></div>
+            </div>
         
-    </div>
-        
+            <div id="video-result" style="display: none;">
+                <h3>Uploaded Video Preview</h3>
+                <div id="video-container">
+                    <video id="video-preview" width="320" height="240" controls>
+                        <source id="video-source" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h3>Prediction Result</h3>
+                <div class="pred">
+                    <p id="prediction-result-class"></p>
+                    <p id="prediction-result"></p>
+                </div>
+            </div>
+        </div>
     </center>
 
+
+
+    <footer>
+        <div id="aboutProject">
+            <p>In today's digital era, video content plays a crucial role in shaping public perception. However, advanced video editing techniques have made it easier to create deceptive videos for malicious purposes. The "Inter-frame Video Forgery Detection" project addresses this challenge by developing a system to distinguish between authentic and manipulated videos. Using the Multi-Scale Difference Convolutional Neural Network (MSDCNN) combined with Long Short-Term Memory (LSTM) networks, the project extracts detailed features capturing both local and global variations across frames. This helps identify genuine temporal dynamics and detect synthetic alterations, preventing the spread of fraudulent media.<br><br>
+                <strong>Objective:</strong> Distinguish between authentic and manipulated video clips by detecting frame insertions and deletions.<br>
+                <strong>Methodology:</strong> Utilizes Multi-Scale Difference Convolutional Neural Network (MSDCNN).
+                Incorporates Long Short-Term Memory (LSTM) networks.<br>
+                <strong>Feature Extraction:</strong>
+                Captures local pixel motion.
+                Analyzes global contextual variations across frames.<br>
+                <strong>Pattern Identification:</strong>
+                Focuses on long-range temporal variations.
+                Enhances differentiation between genuine and synthetic video dynamics.<br>
+        </div>
+    </footer>
+    
     <script src="/static/index.js"></script>
 </body>
 </html>
